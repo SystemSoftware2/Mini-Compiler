@@ -384,12 +384,11 @@ def run_compiler(prog):
 def cli():
     while True:
         com = input('>>> ')
-        else:
-            try:
-                run_compiler(com)
-            except Exception as err:
-                print('Error: ', end="")
-                sys.stderr.write(str(err)+'\n')
+        try:
+            run_compiler(com)
+        except Exception as err:
+            print('Error: ', end="")
+            sys.stderr.write(str(err)+'\n')
 
 if __name__ == '__main__':
     cli()
