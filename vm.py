@@ -4,7 +4,7 @@ type of vm: stack virtual machine.
 Usage:
 
 vm = VirtualMachine()
-vm.run([2, 5, 1, 'a', 2, 5, 1, 'b'])
+vm.run([2, 5, 1, 'a', 2, 5, 1, 'b', 16])
 Output:
 Execution finished
 a: 5
