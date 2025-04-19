@@ -95,7 +95,7 @@ class Parser:
                     raise SyntaxError('Invalid "else" statement')
             elif token[0] == 'exit':
                 ast.append(Node('EXIT', None))
-            elif token[0] == 'pass':
+            elif token[0] == 'empty':
                 ast.append(Node('PASS', None))
             self.pos += 1
             astpos += 1
