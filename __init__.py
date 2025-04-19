@@ -9,3 +9,14 @@ Execution finished
 a: 5
 '''
 from .compiler import *
+from .parser import *
+from .lexer import *
+from .vm import *
+
+def run_code(code):
+  lexer = Lexer()
+  parser = Parser(lexer)
+  
+  ast = parser.parse(code)
+  
+  VirtualMachine().run(Compiler().compileast(ast))
