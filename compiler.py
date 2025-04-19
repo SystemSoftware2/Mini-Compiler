@@ -88,11 +88,17 @@ class Compiler:
             if node.op1.op2:
                 try:
                     r = node.op1.op2
-                    d = str(int(r.op1) - 1)
+                    if node.op1.name == '<':
+                        d = str(int(r.op1) - 1)
+                    else:
+                        d = str(int(r.op1))
                     r.op1 = d
                 except:
                     r = node.op1.op1
-                    d = str(int(r.op1) - 1)
+                    if node.op1.name == '<':
+                        d = str(int(r.op1) - 1)
+                    else:
+                        d = str(int(r.op1))
                     r.op1 = d
             addr1 = self.pc
             self.compilenode(node.op1)
